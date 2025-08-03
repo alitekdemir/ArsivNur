@@ -1,0 +1,22 @@
+{
+  "wrapperTags": [
+    {
+      "id": "w1754130345216",
+      "name": "p arabic",
+      "startTag": "<p class=\"arabic\" dir=\"rtl\" title=\"\">",
+      "endTag": "</p>"
+    },
+    {
+      "id": "w1754130370985",
+      "name": "span arabic",
+      "startTag": "<span class=\"arabic\" dir=\"rtl\" title=\"\">",
+      "endTag": "</span>"
+    },
+    {
+      "id": "underline",
+      "name": "Underline",
+      "startTag": "<u>",
+      "endTag": "</u>"
+    }
+  ]
+}

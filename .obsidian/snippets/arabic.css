@@ -1,0 +1,124 @@
+/* ----------------------------------- */
+/* Amiri ve Amiri Quran fontlarını çağırma */
+/* @import url('https://fonts.googleapis.com/css2?family=Amiri&family=Amiri+Quran&display=swap'); */
+
+/* Tek tek font çağırma */
+/* @import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Amiri+Quran&display=swap'); */
+
+/* Google Fonts için "Lateef" ve "Scheherazade New" fontlarını içe aktar */
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Lateef&display=swap'); */
+/* ----------------------------------- */
+
+/* Arapça metin için genel stil tanımları */
+.arabic {
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: hsl(0, 88%, 66%);
+  color: hsl(350, 88%, 68%);
+  line-height: 3rem;
+  direction: rtl;
+  unicode-bidi: isolate;
+  text-align: center;
+  /* font-family: 'Amiri', serif; */
+  /* font-family: 'Shaikh Hamdullah Mushaf', serif; */
+  font-family: "Scheherazade New", serif;
+}
+
+/* Kuran metni için özel font tanımı */
+.arabic.diyanet {
+  /* Diyanetin kullandığı Mushaf fontu */
+  font-family: "Feyzul Furkan", serif;
+  line-height: 2.2em;
+}
+
+p.arabic {
+  margin: 0;
+  padding: 1rem;
+}
+
+/* span tagı içeren Arapça metin için margin ayarları */
+span.arabic {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+
+/* =================================================== */
+/* ======== ARAPÇA TOOLTIP STİLLERİ BAŞLANGIÇ ======== */
+/* =================================================== */
+
+/* --- 1. Ana Tetikleyici Stili --- */
+/* .arabic sınıfına sahip ve data-tooltip özelliği olan span'ları hedefler */
+.arabic[data-tooltip] {
+  position: relative; /* Tooltip'i kendine göre konumlandırmak için zorunlu */
+  cursor: help; /* Fare imlecini 'yardım' ikonuna çevirir */
+  
+  /* Bir ipucu olduğunu belli etmek için altını noktalı çiz */
+  border-bottom: 2px dotted hsla(350, 88%, 68%, 0.4); 
+  text-decoration: none; /* Tarayıcının varsayılan alt çizgisini kaldır */
+  transition: border-bottom-color 0.3s ease;
+}
+
+/* Tetikleyiciye hover olunca alt çizgiyi belirginleştir */
+.arabic[data-tooltip]:hover {
+  border-bottom-color: hsla(350, 88%, 68%, 1); 
+}
+
+
+/* --- 2. Tooltip'in Kendisi (Gizli Hali) --- */
+.arabic[data-tooltip]::after {
+  /* İçeriği HTML'deki 'data-tooltip' özelliğinden al */
+  content: attr(data-tooltip);
+
+  max-height: 250px; /* Maksimum yükseklik, örneğin 250px */
+  overflow-y: auto;  /* Eğer içerik bu yüksekliği aşarsa, kaydırma çubuğu çıksın */
+
+  /* === Görsel Stil === */
+  background-color: hsla(0, 0%, 15%, 0.95); /* Koyu, hafif şeffaf arka plan */
+  color: hsl(0, 0%, 95%); /* Okunaklı açık renk yazı */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Temiz bir sistem fontu */
+  font-size: 0.9rem; /* Ana metinden biraz daha küçük */
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left; /* Meal metni soldan sağa olduğu için */
+  direction: ltr; /* Meal metninin yönü */
+  padding: 10px 15px;
+  border-radius: 8px;
+  
+  /* === SİZE ÖZEL VURGU RENGİ! === */
+  /* Sizin kırmızınızı burada vurgu olarak kullanıyoruz */
+  border-top: 3px solid hsl(350, 88%, 68%);
+
+  /* === Konumlandırma ve Gizleme === */
+  position: absolute;
+  visibility: hidden; /* Başlangıçta tamamen gizli */
+  opacity: 0; /* Başlangıçta tamamen şeffaf */
+  
+  width: max-content; /* Genişliği içeriğe göre ayarla */
+  max-width: clamp(10rem, 100%, 20rem); /* Ekranı kaplamaması için maksimum genişlik */
+  z-index: 100; /* Her şeyin üstünde görünmesini garantile */
+  
+  /* Konum: Elemanın tam üstünde ve ortasında */
+  left: 50%;
+  bottom: 100%; /* Yazı ile arasında biraz boşluk bırak */
+  transform: translateX(-50%); /* Yatayda tam ortala */
+  
+  /* === Animasyon === */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease 0.2s, transform 0.3s ease;
+
+}
+
+
+/* --- 3. Fare Üzerine Gelince Tooltip'i Gösterme --- */
+.arabic[data-tooltip]:hover::after {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px); /* Hafifçe yukarı kayarak gelme efekti */
+}
+
+/* =================================================== */
+/* ========== ARAPÇA TOOLTIP STİLLERİ BİTİŞ ========== */
+/* =================================================== */
