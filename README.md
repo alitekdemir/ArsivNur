@@ -45,7 +45,9 @@ Emirdağ’ın ilk dönemine ait mektuplar, Said Nursî’nin şahsı ve hizmeti
 **Kastamonu Mektupları:**
 Kastamonu dönemi mektupları, Risale-i Nur’un yayılması, talebelerle yazışmalar, dönemin toplumsal ve dini meseleleri, küçük notlar ve teşvikler ile manevi destek içerir. Mektuplarda, yazılan her şeyin kaydedilmesinin hikmeti ve selam-dua temaları öne çıkar.
 
----
+
+***
+
 
 ## obsidian Entegrasyonu
 
