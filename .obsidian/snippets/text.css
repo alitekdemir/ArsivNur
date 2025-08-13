@@ -1,0 +1,68 @@
+.takdim1 {
+  text-align: center;  /* Metni ortalar */
+  font-size: smaller;  /* Metni daha küçük yapar */
+  font-style: italic; /* Metni italik yapar */
+  /* opacity: 0.85;  */   /*  Metni biraz soluklaştırır */
+  margin-top: 1em;     /* Üstten biraz boşluk bırakır */
+  margin-bottom: 1em;  /* Alttan biraz boşluk bırakır */
+  color: var(--text-muted); 
+}
+
+.takdim {
+  /* Temel Stiller (Sizinkiler) */
+  text-align: center;
+  font-style: italic;
+  margin-top: 0;  /* Boşlukları biraz artırabiliriz */
+  margin-bottom: 0;
+
+  /* --- YENİ ÖNERİLER --- */
+
+  /* Renk: Opacity yerine temanın soluk metin rengini kullanır */
+  color: var(--text-muted); 
+  
+  /* Boyut: 'smaller' yerine daha hassas kontrol */
+  font-size: 0.9em; 
+  line-height: 1.6; /* Satır aralığını artırarak okunabilirliği iyileştirir */
+  
+  /* Kutu Modeli: Geniş ekranlarda okunabilirliği artırır */
+  max-width: 80ch; /* Genişliği maksimum 80 karaktere sınırlar */
+  margin-left: auto;  /* max-width ile birlikte ortalamak için */
+  margin-right: auto; /* max-width ile birlikte ortalamak için */
+  
+  /* Görsel Ayrım: Hafif bir arka plan ve kenarlık */
+  background-color: var(--background-secondary-alt); /* Temanın ikincil arka plan rengi */
+  padding: 1em 1.5em; /* Üst/alt ve sağ/sol iç boşluklar */
+  border-left: 3px solid var(--text-faint); /* Sol kenara ince bir vurgu çizgisi */
+  border-right: 3px solid var(--text-faint); /* Sol kenara ince bir vurgu çizgisi */
+}
+
+
+/*Alıntı yapıldığında alıntılanan dosya adını gizler*/
+.markdown-embed-title {display: none;}
+
+.besmele::before {content: "بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيمِ";}
+
+:root {
+  --besmele: "بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيمِ";
+  --salawat: "اللّٰهُمَّ صَلِّ عَلٰى مُحَمَّدٍ";
+  --hamdele: "اَلْحَمْدُ لِلّٰهِ رَبِّ الْعَالَمِينَ";
+}
+
+.var::before { content: var(--content); }
+.besmele { --content: var(--besmele); }
+.salawat { --content: var(--salawat); }
+.hamdele { --content: var(--hamdele); }
+
+
+
+/*
+[data-var]::before {
+  content: attr(data-content);
+  color: var(--text-accent);
+}
+
+[data-var="besmele"] { --content: "بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيمِ"; }
+[data-var="salawat"] { --content: "اللّٰهُمَّ صَلِّ عَلٰى مُحَمَّدٍ"; }
+
+[data-var]::before { content: var(--content); }
+*/

@@ -1,0 +1,16 @@
+﻿# .obsidian altındaki her şeyi ignore et (tüm alt klasörler dahil)
+.obsidian/**
+
+# İstisnalar: Sadece snippets ve themes'i dahil et (alt dosyalarıyla)
+!/.obsidian/snippets/
+!/.obsidian/snippets/**
+!/.obsidian/themes/
+!/.obsidian/themes/**
+
+# templates klasörünü ve altındaki her şeyi ignore et (kökten)
+templates/
+templates/**
+
+# Diğer ignore'lar
+*.zip
+*.ps1

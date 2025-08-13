@@ -1,0 +1,14 @@
+/* Dataview listelerindeki madde işaretlerini kaldıran özel sınıf */
+/* remove bullet for the "main points (file name) and shift
+   the list to the left a bit (since there's no more bullet */
+ul.dataview.list-view-ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+/* Listenin içindeki her bir LI elementinin de boşluklarını sıfırla */
+.markdown-reading-view ul.dataview.list-view-ul > li,
+.markdown-reading-view .dataview-result-list-ul > li {
+    padding-left: 0;
+    margin-left: 0;
+}
